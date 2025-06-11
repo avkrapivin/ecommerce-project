@@ -49,9 +49,20 @@ To simplify setup, Docker images have been built and configured via `docker-comp
 
 If you only want to run the project without cloning the full source code:
 
-1. Create a file `docker-compose.yml`
-2. Copy the full content of the compose file from [docker-compose.yml](./docker-compose.yml)
-3. Run:
+1. Create a new project folder
+2. Create a file `docker-compose.yml`
+3. Copy the full content of the compose file from [docker-compose.yml](./docker-compose.yml)
+4. Copy the contents of the [`/mysql`](./mysql) folder from this repository into a new mysql subfolder in your project folder
+5. Your folder structure should now look like this:
+    ```
+    my-docker-app/
+    ├── docker-compose.yml
+    └── mysql/
+        ├── 01-init.sql
+        └── 02-init-auth.sql
+    ```
+
+6. Run:
    ```
    docker-compose up -d
    ```
